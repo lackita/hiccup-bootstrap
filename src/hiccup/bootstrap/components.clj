@@ -9,7 +9,6 @@
          :id (navbar-collapse-id header)}
    (concat [:ul {:class "nav navbar-nav"}]
            (map #(-> [:li %]) items))])
-  
 
 (defn navbar-header [header]
   [:div {:class "navbar-header"}
