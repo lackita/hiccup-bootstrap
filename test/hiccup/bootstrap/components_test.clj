@@ -22,5 +22,8 @@
                                 :items ["Bar"]}))))
     (is (re-find #"<li>Baz</li>"
                  (html (navbar {:header "Foo"
-                                :items ["Baz"]}))))))
+                                :items ["Baz"]}))))
+    (is (re-find #"<li>Baz</li>"
+                 (html (navbar {:header "Foo"
+                                :items ["Bar" "Baz"]}))))))
 

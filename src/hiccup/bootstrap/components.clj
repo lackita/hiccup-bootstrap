@@ -7,8 +7,8 @@
 (defn navbar-body [header items]
   [:div {:class "collapse navbar-collapse"
          :id (navbar-collapse-id header)}
-   [:ul {:class "nav navbar-nav"}
-    [:li (first items)]]])
+   (concat [:ul {:class "nav navbar-nav"}]
+           (map #(-> [:li %]) items))])
   
 
 (defn navbar-header [header]
