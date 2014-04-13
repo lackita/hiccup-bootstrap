@@ -7,8 +7,8 @@
 (defn navbar-body [header items]
   [:div {:class "collapse navbar-collapse"
          :id (navbar-collapse-id header)}
-   (concat [:ul {:class "nav navbar-nav"}]
-           (map #(-> [:li %]) items))])
+   (into [:ul {:class "nav navbar-nav"}]
+         (map #(-> [:li %]) items))])
 
 (defn navbar-header [header]
   [:div {:class "navbar-header"}
@@ -23,7 +23,7 @@
 
 (defn navbar-wrapper [& contents]
   [:nav {:class "navbar navbar-default" :role "navigation"}
-   (concat [:div {:class "container"}] contents)])
+   (into [:div {:class "container"}] contents)])
 
 (defn navbar [args]
   (navbar-wrapper

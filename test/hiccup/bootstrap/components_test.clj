@@ -25,5 +25,7 @@
                                 :items ["Baz"]}))))
     (is (re-find #"<li>Baz</li>"
                  (html (navbar {:header "Foo"
-                                :items ["Bar" "Baz"]}))))))
+                                :items ["Bar" "Baz"]}))))
+    (is (re-find #"<div class=\"container\">" (html (navbar nil))))
+    (is (re-find #"<ul class=\"nav navbar-nav\"" (html (navbar nil))))))
 
